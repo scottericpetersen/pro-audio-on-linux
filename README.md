@@ -22,7 +22,7 @@ __Read time:__ 15 minutes
 
 [4. Audio and MIDI Hardware](#4-audio-and-mIDI-hardware)
 
-[5. Software Tools](#5-software-tools)
+[5. CLI Software Tools](#5-cli-software-tools-for-testing-and-configuration)
 
 [6. Setup and Getting to Work](#6-setup-and-getting-to-work)
 
