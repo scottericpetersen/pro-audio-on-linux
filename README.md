@@ -352,11 +352,12 @@ https://github.com/olilarkin/awesome-musicdsp
 ## c. Web Communities [IN PROGRESS]
 
 __Linux Musicians__
+
 https://linuxmusicians.com/
 
 __Reddit Linux Audio__
-https://www.reddit.com/r/linuxaudio/
 
+https://www.reddit.com/r/linuxaudio/
 
 ## d. Configuration Gotchas [IN PROGRESS]
 
