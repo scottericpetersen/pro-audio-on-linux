@@ -233,6 +233,8 @@ Further, MIDI devices are extremely custimizable and often include multiple mapp
 
 # 5. CLI Software Tools for Testing and Configuration
 
+[INCOMPLETE - IN PROGRESS]
+
 Below, where a dollar sign prepends a command, the entire bold sequence must be entered at the command line (CLI). Otherwise, a "normal" standalone program is shown with (GUI) next to it. Using the CLI is empowering and fun. On your Linux system, use your OS launcher and type 'terminal' or search for 'terminal' in your Applications and you will find Terminal, Konsole, xterm, or any number of other terminal emulators.
 
 **rtcqs** (CLI): audio system testing and tuning for pro audio configuration
@@ -298,7 +300,7 @@ Configuration files: wireplumber.conf
 
 # Appendix
 
-## a. Guides and Introductions
+## a. Guides and Introductions [INCOMPLETE - IN PROGRESS]
 
 __Configuring Pro Audio on Debian Systems:__
 
@@ -331,13 +333,13 @@ __Understanding MIDI on Linux__
 http://www.tedfelix.com/linux/linux-midi.html
 
 
-## b. Software and Distro Lists
+## b. Software and Distro Lists [IN PROGRESS]
 
 __Audio Specific Linux Distributions__
 
 https://wiki.linuxaudio.org/apps/categories/distributions
 
-## c. Configuration Gotchas
+## c. Configuration Gotchas [IN PROGRESS]
 
 This doesn't have a logical home in the body of this document, but when configuring a system for pro audio, there are some common gotchas that crop up and can be found in guides and troubleshooting docs all over. Here are a few for completeness.
 
