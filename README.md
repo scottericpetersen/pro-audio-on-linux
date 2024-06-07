@@ -341,7 +341,24 @@ __Audio Specific Linux Distributions__
 
 https://wiki.linuxaudio.org/apps/categories/distributions
 
-## c. Configuration Gotchas [IN PROGRESS]
+__Open Source Audio Plugins and Apps__
+
+https://github.com/webprofusion/OpenAudio
+
+__A curated list of music DSP and audio programming resources__
+
+https://github.com/olilarkin/awesome-musicdsp
+
+## c. Web Communities [IN PROGRESS]
+
+__Linux Musicians__
+https://linuxmusicians.com/
+
+__Reddit Linux Audio__
+https://www.reddit.com/r/linuxaudio/
+
+
+## d. Configuration Gotchas [IN PROGRESS]
 
 This doesn't have a logical home in the body of this document, but when configuring a system for pro audio, there are some common gotchas that crop up and can be found in guides and troubleshooting docs all over. Here are a few for completeness.
 
