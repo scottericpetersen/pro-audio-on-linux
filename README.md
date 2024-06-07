@@ -36,7 +36,9 @@ An introduction to the various considerations of pro audio on Linux via a high-l
 
 ### What this document is not
 
-A tutorial, how-to, or troubleshooting guide of, or for any specific topic or flavor of Linux. Links to select learning guides and resources are provided in the appendix.
+A tutorial, how-to, or troubleshooting guide of, or for any specific topic or flavor of Linux. A good and thorough, though slightly out-of-date explication of the Linux audio stack can be found [here](https://venam.net/blog/unix/2021/02/07/audio-stack.html).
+
+Links to select learning guides and resources are provided in the appendix.
 
 ### How to use this document
 
