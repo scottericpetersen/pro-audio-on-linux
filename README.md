@@ -18,7 +18,7 @@ __Read time:__ 15 minutes
 
 [2. The Linux Audio System](#2-the-linux-audio-system)
 
-[3. Windows Software/Plugins (bridges)](#3-windows-software-plugins-bridges)
+[3. Windows Software/Plugins (bridges)](#3-windows-softwareplugins-bridges)
 
 [4. Audio and MIDI Hardware](#4-audio-and-mIDI-hardware)
 
