@@ -197,7 +197,7 @@ Audio Trackers are a different way of displaying, creating and editing musical i
 
 ## 3.c Plugins
 
-Part of the creation of music on any system is the recording of audio and the creation of instrumental music using either hardware or software instruments. These are provided in the DAW in the form of plugins that are loaded onto individual tracks or buses to generate or process audio signals.
+Part of the creation of music on any system is the recording of audio and the creation of instrumental music using either hardware or software instruments. These are provided in the DAW in the form of plugins that are loaded onto individual tracks or buses to generate or process audio signals. Plugins are architecture specific meaning you cannot use a VST for windows on a Linux system. There are Linux-specific plugins (LADSPA and LV2) and universal plugins (CLAP, VST -- though they have to be compiled specifically for one architecture or another). 
 
 Plugins fit into one of two categories, __instrument plugins__ to generate audio and __DSP plugins__ to process audio. 
 
