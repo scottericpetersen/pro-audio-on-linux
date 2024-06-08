@@ -264,17 +264,19 @@ Configuration files: wireplumber.conf
 
 # 6. Setup and Getting to Work
 
+Below are an overview of steps one might take to tune their system for pro audio. Again, this is not a how-to, but a set of steps to follow using reasonable sources for precisely how to do the install/configuration.
+
 ## 6.a Sane Audio Tuning Strategy
 
-0. **Start with professional hardware**. Built-in audio cards do not provide a low-latency or high-quality experience. Similarly, even low-spec modern laptops are typically able to handle reasonably complex DAW projects without too much effort. However, RAM and CPU architecture *do* matter at the low-end where older i3 chips and 2-4GB of RAM may see you with latency/glitch problems related to low RAM and scheduling speed problems.
+0. **Start with professional hardware**. Built-in audio cards do not provide a low-latency or high-quality experience. Similarly, even low-spec modern laptops are typically able to handle reasonably complex DAW projects without too much effort. However, RAM and CPU architecture *do* matter at the low-end where older i3 chips and 2-4GB of RAM may see you with latency/glitch problems related to low RAM and scheduling bottlenecks.
 1. **Start from scratch**. (if system is currently broken, purge all configs or start with a fresh install)
-2. **Install an rt or low-latency kernel.**
+2. **Install an rt or low-latency kernel** -- whichever is available on your system.
 3. Install a **CPU management application** to allow setting the processor to a power setting or follow instructions here: https://wiki.linuxaudio.org/wiki/system_configuration#do_i_really_need_a_real-time_kernel
-4. **Install pipewire, pipewire-jack, and wireplumber** in the best way for your system and enable them.
+4. **Install pipewire, pipewire-jack, and wireplumber** (if they are not already installed) in the best way for your system and enable them. Currently, Ubuntu-based distros will require the [upstream](https://pipewire-debian.github.io/pipewire-debian/) package for 1.0+ pipewire (required!)
 5. Using a low-latency USB audio device (ex Scarlett 2i2, RME Babyface) be sure to **designate the device as a "pro audio" device** using pavucontrol or by setting using ALSA UCMs [(See here)](https://www.scottericpetersen.com/multichannel-audio-devices-and-linux-not-a-love-story/).
-6. If necessary to reduce latency, create a pipewire policy to lower the latency/quantum. 
+6. If necessary to reduce latency, create a [pipewire policy for JACK](https://docs.pipewire.org/page_man_pipewire-jack_conf_5.html) to lower the latency/quantum. 
 7. Download and run [rtcqs](https://github.com/autostatic/rtcqs) to make sure your setup is sane and working and all desired mitigations are en/disabled.
-8. Install the audio software of your choice. Try to use packages provided from your maintainers, or trusted sources (PPAs update well, or get direct from the author via GitHub or their website.)
+8. Install the audio software of your choice. Try to use packages provided from your maintainers, or trusted sources (PPAs update well, or get direct from the author via GitHub or their website.)  See Appendix B for lists of software.
 
 ## 6.b Best Practices
 
@@ -301,6 +303,10 @@ Configuration files: wireplumber.conf
 # Appendix
 
 ## a. Guides and Introductions [INCOMPLETE - IN PROGRESS]
+
+__Accounting for Latency in Ardour:__
+
+https://manual.ardour.org/synchronization/latency-and-latency-compensation/
 
 __Configuring Pro Audio on Debian Systems:__
 
