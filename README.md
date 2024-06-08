@@ -32,7 +32,7 @@ __Read time:__ 15 minutes
 
 ## What is this document? 
 
-An introduction to the various considerations of pro audio on Linux via a high-level overview of how audio-centric linux systems work that includes an up-to-date (as of 5/2024) listing of the most current and preferred Linux audio system components. Effort has been made to keep this document as concise as possible to reduce friction for the initiate. Lists of software, configurations, and associated programs can be found in the appendix.
+An introduction to professional music and audio production on Linux via high-level overview of audio-centric linux system components and configurations. Effort has been made to keep this document as concise as possible to reduce friction for the initiate. Lists of software, configurations, and associated programs can be found in the appendix.
 
 ### What this document is not
 
@@ -52,21 +52,19 @@ __Takeaway:__ You may need to dig further if any of the components mentioned bel
 
 ## 1.a What is a Linux Distribution?
 
-Fedora, Ubuntu, Arch, etc, are Linux distributions (slang -- distros). Distros provide init systems, kernels, window or display managers, and software packaged to work together in a secure and productive way. Your distro will provide updates to your software regularly through their software repositories. (Keeping your system up-to-date is a good idea.) Most of the time, when you want software, the best way to get it is to use your distros package management system.
+Fedora, Ubuntu, Arch, etc, are Linux distributions (slang -- distros). Distros provide init systems, kernels, window or display managers, and software packaged to work together in a secure and productive way. Your distro will provide updates to your software regularly through their software repositories. (Keeping your system up-to-date is a good idea.) Some distros are designed to be stable (ex. Debian), some to be cutting-edge (ex. Arch.) Your distro will provide a default look-and-feel, but this can be customized.
 
-Sometimes, however, that is not possible or advisable for various reasons (availability, packages out of date, etc.) In these instances, it is possible to install software a number of different ways from using git to using another PPA [EXPLAIN] or software curation system (AUR.)
-
-__Takeaway:__ Your distro can be designed to be stable (ex. Debian) or cutting-edge (ex. Arch.) Your distro will provide a default look-and-feel, but this can be customized. Almost everything can be customized, but the stability/availability will be determined by the distro itself. 
+Most of the time, when you want software, the best way to get it is to use your distro's package management system. Sometimes, however, that is not possible desired packages out of date or unavailable. In these instances, it is possible to install software a number of different ways. Packages can be downloaded and installed from github, additional PPAs (personal package archives), or directly from a developer's website. 
 
 ## 1.b Audio-specific Distributions
 
 Audio-specific distros exist for pro audio production. You do not need to use an audio-specific distro, but they do the tedious configuration for you, saving you a lot of time and effort. For those new to pro audio on Linux, I recommend using one. (See the appendix for a list of audio distributions.) For everyone else, you can use your distro of choice, deciding on stability versus cutting-edge features/programs, and customize from there.
 
-__Takeaway:__ What is available from your distro can be supplemented by audio tuning and software (see 1.c below), or you can use a distro that is designed for pro audio first.
+__Takeaway:__ What is available from your distro can be supplemented by audio tuning (configuration) and software (see 1.c below), or you can use a distro that is designed for pro audio first.
 
 ## 1.c Audio Software Repositories
 
-There are distributions that also have repositories for their software that can be used on any system. An example is the KXStudio Distro whose repos can be used on any Debian system to provide both middle and high-level audio software including utilities, plugins, and standalone audio programs.
+There are distributions that also have repositories for their software that can be used on any system. An example is the [KXStudio](https://kx.studio/) repos which can be used on any Debian system to provide both middle and high-level audio utilities, plugins, and standalone programs.
 
 ## 1.d The Kernel
 
