@@ -145,6 +145,10 @@ Wireplumber manages connections from applications and policy for audio applicati
 
 __Takeaway:__ If ALSA hardware is unavailable in a pipewire connection manager (like qpwgraph) it may be that either ALSA or Wireplumber are misconfigured.
 
+## A Note on JACK and pipewire-jack
+
+JACK (jackd) and pipewire-jack cannot be installed and configured on the same system -- they conflict. If you want to use pipewire, you should install only the packages required by pipewire-jack and create the configuration for jack [according to pipewire](https://docs.pipewire.org/page_man_pipewire-jack_conf_5.html).
+
 ## 2.f Groups
 
 When you create an account for yourself on your new Linux OS, your user gets certain privileges by being a member of different groups (who themselves are granted different permissions to access different files, hardware devices, etc). The **sudo** group gives you the privilege of acting like root to, for example, accidentally destroy your operating system. The **plugdev** group gives members the ability to access and use USB devices -- useful for MIDI and audio devices. To see what groups you are a member of, simply run `$groups` at the CLI.
@@ -306,6 +310,12 @@ Below are an overview of steps one might take to tune their system for pro audio
 
 ### Guides
 
+__Arch Wiki Guide to Pro Audio__ 
+
+The Arch Wiki is *the authority* and a wonder of the modern web. It is written for Arch Linux, but the truths it contains are universal. 
+
+https://wiki.archlinux.org/title/Professional_audio#PipeWire-only
+
 __Configuring Pro Audio on Debian Systems:__
 
 https://github.com/chmaha/DebianProAudio
@@ -379,10 +389,10 @@ This doesn't have a logical home in the body of this document, but when configur
 ### Paths and config file priority
 Programs, daemons, etc, will look for user-specific config files before defaulting to system-level locations. 
 
-**Gotcha:** some programs on different distributions will look for user-space config files in different places.
+**Gotcha:** On different distributions, the config files for a given program will have different user-space paths.
 
-**Gotcha:** Some software will not use user space configs, requiring you to edit system level (ex. /etc/...) config files.
+**Gotcha:** Some software does not use user-space configs at all. Configuring these programs requires you to edit system level (ex. /etc/...) files.
 
-**Gotcha:** Some software does not install a config file at all and one must be created before it can be populated.
+**Gotcha:** Some software does not install a config file at all -- one must be created before it can be populated. Sometimes a quick duckduckgo search will reveal sample configurations which may or may not be appropriate for one's use case.
 
-**Gotcha:** The configuration for some software (ex. pipewire) is affected by the configuration of another program (wireplumber). In most instances, this should be clear from the functionality and architecture of the software, but it can be transparent.
+**Gotcha:** The configuration for one program (ex. pipewire) might be affected by the configuration of another program (wireplumber). In most instances, this should be clear from the functionality and architecture of the software, but it can be transparent.
