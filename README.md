@@ -1,4 +1,4 @@
-# An Introduction to Pro Audio on Linux for the Uninitiated
+# An Introduction to Pro Audio on Linux for the Recently Initiated
 
 __Version:__ 1.0.0
 
@@ -302,15 +302,9 @@ Below are an overview of steps one might take to tune their system for pro audio
 
 # Appendix
 
-## a. Guides and Introductions [INCOMPLETE - IN PROGRESS]
+## a. Guides and Introductions (In No Particular Order) [INCOMPLETE - IN PROGRESS]
 
-__Yabridge plugin compatibility and fixes can be found here:__
-
-https://github.com/robbert-vdh/yabridge?tab=readme-ov-file#known-issues-and-fixes
-
-__Accounting for Latency in Ardour:__
-
-https://manual.ardour.org/synchronization/latency-and-latency-compensation/
+### Guides
 
 __Configuring Pro Audio on Debian Systems:__
 
@@ -322,28 +316,39 @@ https://github.com/chmaha/ArchProAudio
 
 https://wiki.archlinux.org/title/Professional_audio
 
-__Overview of ALSA, Pulse__
-
-https://thelinuxcode.com/guide_linux_audio/
-
-__Using Wine__
-
-https://wine.htmlvalidator.com/essays-on-understanding-and-using-wine.html
-
-__Configuration Yabridge__
-
-https://github.com/robbert-vdh/yabridge
-
 __Configuring Pipewire__
 
 https://github.com/mikeroyal/PipeWire-Guide?tab=readme-ov-file
+
+### Misc
+
+__Overview of ALSA, Pulse__
+
+https://thelinuxcode.com/guide_linux_audio/
 
 __Understanding MIDI on Linux__
 
 http://www.tedfelix.com/linux/linux-midi.html
 
+__Accounting for Latency in Ardour:__
 
-## b. Software and Distro Lists [IN PROGRESS]
+https://manual.ardour.org/synchronization/latency-and-latency-compensation/
+
+### Windows Software on Linux
+
+__Using Wine__
+
+https://wine.htmlvalidator.com/essays-on-understanding-and-using-wine.html
+
+__Configuring Yabridge__
+
+https://github.com/robbert-vdh/yabridge
+
+__Yabridge plugin compatibility__
+
+https://github.com/robbert-vdh/yabridge?tab=readme-ov-file#known-issues-and-fixes
+
+## b. Software Lists [IN PROGRESS]
 
 __Audio Specific Linux Distributions__
 
@@ -367,7 +372,7 @@ __Reddit Linux Audio__
 
 https://www.reddit.com/r/linuxaudio/
 
-## d. Configuration Gotchas [IN PROGRESS]
+## d. Working with Files (Configuration Gotchas) [IN PROGRESS]
 
 This doesn't have a logical home in the body of this document, but when configuring a system for pro audio, there are some common gotchas that crop up and can be found in guides and troubleshooting docs all over. Here are a few for completeness.
 
