@@ -103,7 +103,7 @@ The following section describes the ways your Linux system *might* handle audio.
 
 One important "feature" of ALSA that shows why the following sections on audio servers exist, is that it provides connection to system hardware (built-in or USB, etc) to *only one client* at a time. This means if you directly choose ALSA as the sound server of choice in your DAW, no other audio sources on your system (ex. Spotify running in a browser) will have access to the audio card.
 
-__Takeaway:__ if ALSA is misconfigured, or is not able to provide a driver in order to interact with an audio device, nothing will work, and all of the mixer/servers sitting on top of ALSA will have no interface to the audio device. In other words, when troubleshooting, the problem with a device (no audio in or out, etc) may be higher-up (pipewire-jack) or lower down (ALSA). 
+__Takeaway:__ If ALSA is misconfigured, or is not able to provide a driver for an audio device, that device will be unavailable to any server above ALSA like JACK, Pulse or Pipewire. If a device is unavailable (not seen or misconfigured) in Pulse, the problem may be either with Pulse or with ALSA or the device is not compatible with a Linux system. 
 
 ## 2.b PulseAudio (server/mixer)
 
@@ -111,11 +111,11 @@ __Takeaway:__ if ALSA is misconfigured, or is not able to provide a driver in or
 
 __Pulseaudio is not a low-latency application and therefore unsuitable for pro audio.__ However, your system probably still uses it for general audio mixing.
 
-__Takeaway:__ Most modern systems, even those that use pipewire as the default audio server, still have PulseAudio or compatibilty libraries for it (pipewire-pulse) installed. Common, everyday computing audio needs like having a GUI control for selecting audio devices and adjusting volumes/muting rely on it and it's various programs.
+__Takeaway:__ Most modern systems, even those that use pipewire as the default audio server, still have PulseAudio or compatibility libraries for it (pipewire-pulse) installed to provide components and GUIs for adjusting volumes, muting channels, and choosing different audio devices.
 
 ## 2.c JACK (server/mixer)
 
-Jack Audio Connection Kit is the OG low-latency audio server/mixer. Most pro audio applications *want* it (ex. Ardour), and some *require* it (ex. SuperCollider). It can be tuned using either config files or GUIs such as QJackCTL or QPWGraph to allow for extremely low latency on systems that are otherwise well-tuned.
+Jack Audio Connection Kit is the OG low-latency audio server/mixer. Most pro audio applications *want* it (ex. Ardour), and some *require* it (ex. SuperCollider). It can be tuned by editing its configuration files (jackd.conf) or using GUIs like such as QJackCTL or QPWGraph.
 
 A modern pro audio setup *not using pipewire* typically consists of JACK running on top of ALSA with PulseAudio and MIDI bridged to it to allow general system programs and devices to work seamlessly with JACK.
 
@@ -127,11 +127,11 @@ PulseAudio -> bridge -> JACK -> ALSA
 
 ```
 
-If you want to use JACK without pipewire (no longer recommended), I **strongly** suggest enabling the kxstudio repositories and installing Cadence. You can then use Cadence to configure JACK and bridge both PulseAudio and ALSA MIDI from the same application. (Otherwise, this requires additional software and configuration.)
+If you want to use JACK without pipewire (no longer recommended), I **strongly** suggest adding the KXStudio repositories and installing [Cadence](https://kx.studio/Applications:Cadence). You can use Cadence to configure JACK and bridge both PulseAudio and ALSA MIDI from the same application. Otherwise, you will have to install additional software and correctly create multiple configuration files.
 
 ## 2.d PipeWire (server/mixer)
 
-Pipewire is the next generation audio (and video) server for Linux. It unifies handling of JACK and PulseAudio clients through pipewire-jack and pipewire-pulse packages. This means that applications that expect or require PulseAudio or JACK will work with pipewire via these packages. Pipewire can be configured for low-latency audio either universally or on an application-by-application basis. Configuring pipewire can be challengin, but pipewire documentation is very good and there are plenty of guides (see Appendix). Configuration of pipewire is handled by Wireplumber.
+Pipewire is the next generation audio (and video) server for Linux. It unifies handling of JACK and PulseAudio clients through pipewire-jack and pipewire-pulse packages. This means that applications that expect or require PulseAudio or JACK will work with pipewire via these packages. Pipewire can be configured for low-latency audio either universally or on an application-by-application basis. Configuring pipewire can be challenging, but pipewire documentation is very good and there are plenty of guides (see Appendix). Policy for pipewire is managed by Wireplumber.
 
 __Takeaway:__ Pipewire (pipewire-jack) is flexible and low-latency with performance on par with JACK. Configuring it properly requires work. **Ignore old documentation for systems referencing pipewire-media-session which was replaced by wireplumber.**
 
@@ -149,7 +149,7 @@ __Takeaway:__ If ALSA hardware is unavailable in a pipewire connection manager (
 
 When you create an account for yourself on your new Linux OS, your user gets certain privileges by being a member of different groups (who themselves are granted different permissions to access different files, hardware devices, etc). The **sudo** group gives you the privilege of acting like root to, for example, accidentally destroy your operating system. The **plugdev** group gives members the ability to access and use USB devices -- useful for MIDI and audio devices. To see what groups you are a member of, simply run `$groups` at the CLI.
 
-On Debian systems, installing JACK packages creates a file that allows members of the **audio** group realtime privileges. This is necessary to avoid audio glitches (xruns) when recording, etc. 
+On Debian systems, installing JACK packages creates a file that allows members of the **audio** group realtime privileges. This is necessary to avoid audio glitches (xruns) when recording or when running audio projects or programs with lots of audio processing.
 
 On Arch Linux, one must install the **realtime-privileges** package and then add themselves to the **realtime** group.
 
@@ -303,6 +303,10 @@ Below are an overview of steps one might take to tune their system for pro audio
 # Appendix
 
 ## a. Guides and Introductions [INCOMPLETE - IN PROGRESS]
+
+__Yabridge plugin compatibility and fixes can be found here:__
+
+https://github.com/robbert-vdh/yabridge?tab=readme-ov-file#known-issues-and-fixes
 
 __Accounting for Latency in Ardour:__
 
