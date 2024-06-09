@@ -26,7 +26,7 @@ __Read time:__ 15 minutes
 
 [6. CLI Software Tools](#6-cli-software-tools-for-testing-and-configuration)
 
-[7. Setup and Getting to Work](#6-setup-and-getting-to-work)
+[7. Setup and Getting to Work](#7-setup-and-getting-to-work)
 
 [Appendix](#appendix)
 
