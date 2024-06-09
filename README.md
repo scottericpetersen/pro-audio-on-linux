@@ -97,6 +97,24 @@ __Takeaway:__ Customizing your Linux system is part of what makes Linux awesome.
 
 The following section describes the ways your Linux system *might* handle audio. Typically, pro audio systems are configured to use JACK with PulseAudio and MIDI bridges, or more recently, to use Pipewire and its pulse and JACK interfaces. At the bottom of the stack is ALSA, which is the audio processing part of the Linux kernel. 
 
+```
+Example Audio Stack Using Pipewire                                               
+                                                                 +---------------+
+                                                                 | SuperCollider |
+                                            +----------------+   | (jack client) |
+ +--------+              +----------+       |   PIPEWIRE     |   +---------------+
+ | Audio/ | --- IN  ---> |   ALSA   |  I/O  |                |           ^        
+ | MIDI   |              | DRIVERS  | <---> | pipewire-jack  | <---------+        
+ | Device | <-- OUT ---  |          |       |                |                    
+ +--------+              +----------+       | pipewire-pulse | <---------+        
+                                            +----------------+           v        
+                                                                 +---------------+
+                                                                 |   Browser/    |
+                                                                 |   YouTube     |
+                                                                 |(Pulse client) |
+                                                                 +---------------+
+```
+
 ## 2.a Kernel level - ALSA
 
 ***ALSA*** provides hardware interfacing and device drivers for audio hardware (input and output.) Because it is part of the kernel, ALSA is always present on every system. 
