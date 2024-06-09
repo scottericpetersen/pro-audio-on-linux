@@ -95,7 +95,7 @@ __Takeaway:__ Customizing your Linux system is part of what makes Linux awesome.
 
 # 2. The Linux Audio System
 
-The following section describes the ways your Linux system *might* handle audio. Typically, pro audio systems are configured to use JACK with PulseAudio and MIDI bridges, or more recently, to use Pipewire and its pulse and JACK interfaces. At the bottom of the stack is ALSA, which is the audio processing part of the Linux kernel. 
+The following section describes the ways your Linux system *might* handle audio. Typically, pro audio systems are configured to use JACK with PulseAudio and MIDI bridges, or more recently, to use Pipewire and its pulse and JACK interfaces. At the bottom of the stack is ALSA, the part of the Linux kernel that provides drivers for audio hardware. 
 
 ```
 Example Audio Stack Using Pipewire                                               
@@ -117,7 +117,7 @@ Example Audio Stack Using Pipewire
 
 ## 2.a Kernel level - ALSA
 
-***ALSA*** provides hardware interfacing and device drivers for audio hardware (input and output.) Because it is part of the kernel, ALSA is always present on every system. 
+***ALSA*** provides hardware interfacing and device drivers for audio hardware (input and output.) Because it is part of the kernel, ALSA is present on Linux systems. 
 
 One important "feature" of ALSA that shows why the following sections on audio servers exist, is that it provides connection to system hardware (built-in or USB, etc) to *only one client* at a time. This means if you directly choose ALSA as the sound server of choice in your DAW, no other audio sources on your system (ex. Spotify running in a browser) will have access to the audio card.
 
@@ -231,7 +231,11 @@ Plugins are typically created by independent, third party developers, though the
 
 Experimental computer music and live performance practices including live coding are usually accomplished in an audio domaine specific language such as Csound or SuperCollider. These programs are available from most distros, but recent versions (esp SuperCollider) may have to be built from source. 
 
-## 3.e CLI Utilities
+## 3.e Configuration and Audio Routing Utilities
+
+It is possible to configure your Linux system to use different input and output hardware. You can also easily connect hardware device inputs and outputs to multiple software clients as well as route audio from one audio/MIDI program to another. There are many tools for this, but the GUI programs [QjackCt](https://qjackctl.sourceforge.io/) and [qpwgraph](https://github.com/rncbc/qpwgraph) are ubiquitous, up-to-date and well supported.
+
+## 3.f CLI Utilities
 
 Modern general purpose programming languages like Python have extensive audio processing abilities through its vast library (module) system. However, there are command-line tools specifically to process audio files, including batch processing. Examples include sox.
 
