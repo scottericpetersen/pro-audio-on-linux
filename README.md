@@ -45,6 +45,10 @@ A tutorial, how-to, or troubleshooting guide of, or for any specific topic or fl
 
 Links to select learning guides and resources are provided in the appendix.
 
+### Why not a guide?
+
+Software changes quickly. High and low level changes happen *all the time*. These are rarely breaking, but sometimes (and especially recently) they are. We are experiencing an epocal shift at the moment away from ALSA+PulseAudio to ALSA+Pipewire. JACK remains constant for the Linux Musician, but it's configuration and use under pipewire is very different than it was previously. In general, the Linux world is one of vast choices. Head over to [DistroWatch.com](https://distrowatch.com/) and page through the different categories from distributions to package management systems and you will quickly understand why a single guide to *anything* Linux is impossible.
+
 ### How to use this document
 
 Read it. Any or all of it. If something is incomplete or confusing, let me know or submit a pull request.
