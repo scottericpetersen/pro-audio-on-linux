@@ -20,13 +20,18 @@ __Read time:__ 15 minutes
 
 [3. Windows Software/Plugins (bridges)](#3-windows-softwareplugins-bridges)
 
-[4. Audio and MIDI Hardware](#4-audio-and-mIDI-hardware)
+[4. Audio Software](#4-audio-software)
 
-[5. CLI Software Tools](#5-cli-software-tools-for-testing-and-configuration)
+[5. Audio and MIDI Hardware](#5-audio-and-mIDI-hardware)
 
-[6. Setup and Getting to Work](#6-setup-and-getting-to-work)
+[6. CLI Software Tools](#6-cli-software-tools-for-testing-and-configuration)
+
+[7. Setup and Getting to Work](#6-setup-and-getting-to-work)
 
 [Appendix](#appendix)
+
+
+
 
 # 0. About
 
@@ -199,23 +204,23 @@ MIDI support in the kernel is provided by ALSA. And, like audio, when using a se
  
 MIDI availability largely comes down to system-level and hardware configuration, and less so modern pro audio configuration. See the hardware section below for details.
 
-# 3. Software
+# 4. Audio Software
 
 There are many lists of free/open source software for Linux. Here we talk only about categories. See the lists in the appendix for specific lists of software and recommendations.
 
 As mentioned above, installation of software via the users OS repositories is usually the *easiest* way to get software. However, depending on the maintainers, software versions may not be recent. Always check the software version in your OS repo against the latest release from the authors to see whether you are missing important features, bug fixes, or stability improvements.
 
-## 3.a DAWs
+## 4.a DAWs
 
 DAWs used to refer to the entire configuration and interconnection of hardware tools, both audio and MIDI, and the system and software that used them. Now, DAW typically refers to a single piece of software that allows you to record, mix, edit, and produce music (audio and MIDI). Examples include [Reaper](https://www.reaper.fm/) and [Ardour](https://ardour.org/). (See Appendix C for a more complete list.)
 
 DAWs typically, but do not always, come with *some* audio generating and processing plugins. The quality, of which, however, is dubious. Thus, an integral part of DAWs is the ability extend their functionality by hosting other pieces of sound generating and processing software known as plugins. (See below)
 
-## 3.b Audio Trackers
+## 4.b Audio Trackers
 
 Audio Trackers are a different way of displaying, creating and editing musical information from DAWs. Typically, they scroll top to bottom rather than left-to-right, and data entry is more discrete than in a DAW where there is the illusion of continuous time in the sequencer. Examples include [Renoise](https://www.renoise.com/), [Milky Tracker](https://milkytracker.org/), [SunVox](https://warmplace.ru/soft/sunvox/).
 
-## 3.c Plugins
+## 4.c Plugins
 
 Part of the creation of music on any system is the recording of audio and the creation of instrumental music using either hardware or software instruments. These are provided in the DAW in the form of plugins that are loaded onto individual tracks or buses to generate or process audio signals. Plugins are architecture specific meaning you cannot use a VST for windows on a Linux system. There are Linux-specific plugins (LADSPA and LV2) and universal plugins (CLAP, VST -- though they have to be compiled specifically for one architecture or another). 
 
@@ -227,37 +232,37 @@ DSP plugins are often referred to as "effects plugins" and include common proces
 
 Plugins are typically created by independent, third party developers, though there are usually plugins bundled with DAW software, the quality of which are questionable.
 
-## 3.d Audio Programming Languages
+## 4.d Audio Programming Languages
 
 Experimental computer music and live performance practices including live coding are usually accomplished in an audio domaine specific language such as Csound or SuperCollider. These programs are available from most distros, but recent versions (esp SuperCollider) may have to be built from source. 
 
-## 3.e Configuration and Audio Routing Utilities
+## 4.e Configuration and Audio Routing Utilities
 
 It is possible to configure your Linux system to use different input and output hardware. You can also easily connect hardware device inputs and outputs to multiple software clients as well as route audio from one audio/MIDI program to another. There are many tools for this, but the GUI programs [QjackCt](https://qjackctl.sourceforge.io/) and [qpwgraph](https://github.com/rncbc/qpwgraph) are ubiquitous, up-to-date and well supported.
 
-## 3.f CLI Utilities
+## 4.f CLI Utilities
 
 Modern general purpose programming languages like Python have extensive audio processing abilities through its vast library (module) system. However, there are command-line tools specifically to process audio files, including batch processing. Examples include sox.
 
 __Takeaway:__ If you need to normalize and add fade-ins and fade-outs to 137 audio files you recorded of Blue Whale song, you are better off using a CLI utility than a DAW or high-level program like SuperCollider.
 
-# 4. Audio and MIDI Hardware
+# 5. Audio and MIDI Hardware
 
 Any audio or MIDI interface that is USB class compliant can be used with a Linux system. In many cases, ALSA will make the device available transparently without need for intersession. 
 
-## 4.a Audio Devices
+## 5.a Audio Devices
 
 In some cases, especially with large IO (8 in, 8 out) audio interfaces, some configuration will be necessary, either by designating the device as a "pro audio" device in pavucontrol, or by using ALSA UCM to expose all of the device IO to the audio server software sitting above it. 
 
 Devices that are not class compliant and that do not have Linux drivers written for ALSA will not be usable on a Linux system. Additionally, even devices that are class compliant (ex. Scarlett 2i2, RME Babyface) will not be able to use any proprietary mixer software that ships with the device as these are invariably Mac/Windows only, and wine does not provide the ability to pass through device controls (hardware.) This means that the class compliant device needs to be able to be fully controlled by the hardware. Some devices have multiple modes they can operate in that render them class compliant (read: controllable via hardware alone.)
 
-## 4.b MIDI Devices
+## 5.b MIDI Devices
 
 Like audio devices, MIDI controllers connect to the system mostly via USB and are exposed to the system via ALSA. And, like audio devices, MIDI controllers may have proprietary functionality that will not work on a Linux system. A proper example of this is the AutoMap feature built-into Novation MIDI devices. They are not available in AutoMap mode despite being class compliant. Disabling Automap mode makes the hardware usable. 
 
 Further, MIDI devices are extremely custimizable and often include multiple mappings (presets) for the control change knobs, faders, and buttons, and even the note-on/note-off keys of the standard MIDI keyboard. Checking what is being communicated from a MIDI device requires use of a utility such as midisnoop. 
 
-# 5. CLI Software Tools for Testing and Configuration
+# 6. CLI Software Tools for Testing and Configuration
 
 [INCOMPLETE - IN PROGRESS]
 
@@ -288,11 +293,11 @@ Configuration files: wireplumber.conf
 
 **Gotcha:** Sometimes programs are installed by other programs. This is either because they are dependencies of that program, or because a given package installs multiple applications. This can be confusing when looking for conflicting packages or updates to a program where the packagename for said program differs from the program itself. An example is the alsa-utils meta package which installs the a ton of programs including aplay, alsamixer, alsactl, amidi, alsa-info, etc.
 
-# 6. Setup and Getting to Work
+# 7. Setup and Getting to Work
 
 Below are an overview of steps one might take to tune their system for pro audio. Again, this is not a how-to, but a set of steps to follow using reasonable sources for precisely how to do the install/configuration.
 
-## 6.a Sane Audio Tuning Strategy
+## 7.a Sane Audio Tuning Strategy
 
 0. **Start with professional hardware**. Built-in audio cards do not provide a low-latency or high-quality experience. Similarly, even low-spec modern laptops are typically able to handle reasonably complex DAW projects without too much effort. However, RAM and CPU architecture *do* matter at the low-end where older i3 chips and 2-4GB of RAM may see you with latency/glitch problems related to low RAM and scheduling bottlenecks.
 1. **Start from scratch**. (if system is currently broken, purge all configs or start with a fresh install)
@@ -304,7 +309,7 @@ Below are an overview of steps one might take to tune their system for pro audio
 7. Download and run [rtcqs](https://github.com/autostatic/rtcqs) to make sure your setup is sane and working and all desired mitigations are en/disabled.
 8. Install the audio software of your choice. Try to use packages provided from your maintainers, or trusted sources (PPAs update well, or get direct from the author via GitHub or their website.)  See Appendix B for lists of software.
 
-## 6.b Best Practices
+## 7.b Best Practices
 
 **When recording:**
 
