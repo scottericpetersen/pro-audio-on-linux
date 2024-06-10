@@ -59,7 +59,7 @@ Most of the time, when you want software, the best way to get it is to use your 
 
 ## 1.b Audio-specific Distributions
 
-Audio-specific distros exist for pro audio production. You do not need to use an audio-specific distro, but they do the tedious configuration for you, saving you a lot of time and effort. For those new to pro audio on Linux, I recommend using one. (See the appendix for a list of audio distributions.) For everyone else, you can use your distro of choice, deciding on stability versus cutting-edge features/programs, and customize from there.
+Audio-specific distros exist for pro audio production. You do not need to use an audio-specific distro, but they do the tedious configuration for you, saving you a lot of time and effort. For those new to pro audio on Linux, I recommend using one. (See the appendix for a list of audio distributions.) For everyone else, you must choose between stability (and slightly older packages) and bleeding edge (new, but often broken) and customize as you like.
 
 __Takeaway:__ What is available from your distro can be supplemented by audio tuning (configuration) and software (see 1.c below), or you can use a distro that is designed for pro audio first.
 
