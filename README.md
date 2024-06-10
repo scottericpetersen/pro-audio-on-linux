@@ -55,7 +55,7 @@ __Takeaway:__ You may need to dig further if any of the components mentioned bel
 
 Fedora, Ubuntu, Arch, etc, are Linux distributions (slang -- distros). Distros provide init systems, kernels, window or display managers, and software packaged to work together in a secure and productive way. Your distro will provide updates to your software regularly through their software repositories. (Keeping your system up-to-date is a good idea.) Some distros are designed to be stable (ex. Debian), some to be cutting-edge (ex. Arch.) Your distro will provide a default look-and-feel, but this can be customized.
 
-Most of the time, when you want software, the best way to get it is to use your distro's package management system. Sometimes, however, that is not possible desired packages out of date or unavailable. In these instances, it is possible to install software a number of different ways. Packages can be downloaded and installed from github, additional PPAs (personal package archives), or directly from a developer's website. 
+Most of the time, when you want software, the best way to get it is to use your distro's package management system. Sometimes, however, that is not possible as desired packages might be out of date or unavailable. In these instances, it is possible to install software a number of different ways. Packages can be downloaded and installed from github, via additional PPAs (personal package archives), or directly from a developer's website. 
 
 ## 1.b Audio-specific Distributions
 
