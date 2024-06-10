@@ -367,6 +367,10 @@ __Accounting for Latency in Ardour:__
 
 https://manual.ardour.org/synchronization/latency-and-latency-compensation/
 
+__Hardware Compatibility (audio interfaces)__
+
+https://interfacinglinux.com/linux-compatible-audio-interfaces/
+
 ### Windows Software on Linux
 
 __Using Wine__
