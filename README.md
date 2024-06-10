@@ -88,11 +88,11 @@ __Takeaway:__ Most popular distros use *systemd* as their init system. Proper co
 
 ## 1.f Desktop, Window, or Display Manager
 
-This is how your system looks and feels. Plasma is a popular desktop and display management technosystem that follows the general desktop computing paradigm. Also popular now are tiling window managers that provide a more organized, but usually more minimal interface. 
+This is how your system looks and feels. Plasma is a popular desktop and display management technosystem that follows the general desktop computing paradigm. Also popular now are [tiling window managers](https://wiki.archlinux.org/title/Comparison_of_tiling_window_managers) that provide a more organized, but usually more minimal interface. 
 
-Whether or not your system looks and "acts" like another Linux system is imaterial. Most sit on top of the same audio stack. You can change your desktop/window/display manager as you like *often* but not always without affecting the audio system. (See PulseAudio below.) An example of losing some audio functionality would be switching your DM from Plasma to i3 where i3 has not been purposefully configured to load things like pavucontrol, leaving your audio system without a proper desktop-level mixer (and you without volume controls).
+Whether or not your system looks and "acts" like another Linux system is immaterial. Most sit on top of the same audio stack. You can change your desktop/window/display manager as you like *often* but not always without affecting the audio system. An example of losing some audio functionality would be switching your desktop environment from KDE Plasma to i3 where i3 has not been purposefully configured to load things like pavucontrol (see PulseAudio below), leaving your audio system without a proper desktop-level mixer (and you without volume controls).
 
-__Takeaway:__ Customizing your Linux system is part of what makes Linux awesome. Just be aware that changes to how it looks *can* affect your audio system.
+__Takeaway:__ Customizing your Linux system is part of what makes Linux awesome. Just be aware that changes to how your system looks *can* affect your audio system.
 
 # 2. The Linux Audio System
 
