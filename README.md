@@ -1,14 +1,6 @@
 # An Introduction to Pro Audio on Linux for the Recently Initiated
 
-__Version:__ 1.0.0
-
-__Author:__ Scott E. Petersen (www.scottericpetersen.com)
-
-__License:__ GPL3
-
-__Copyright:__ 2024 Scott E Petersen
-
-__Read time:__ 15 minutes
+If you are new to making music on Linux, how audio works, how applications are installed and configured, essentially *everything* can be confusing. This document aims to provide a high level overview of the linux audio technosystem for those new to Linux, but not necessarily to making music.
 
 # Table of Contents
 
