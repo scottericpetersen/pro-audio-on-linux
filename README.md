@@ -1,6 +1,6 @@
 # An Introduction to Pro Audio on Linux for the Recently Initiated
 
-If you are new to making music on Linux, how audio works, how applications are installed and configured, essentially *everything* can be confusing. This document aims to provide a high level overview of the linux audio technosystem for those new to Linux, but not necessarily to making music.
+If you are new to making music on Linux, how audio works, how applications are installed and configured, essentially *everything* can be confusing. This document aims to provide a high level overview of the Linux audio technosystem for those new to Linux, but not necessarily to making music.
 
 # Table of Contents
 
@@ -29,7 +29,7 @@ If you are new to making music on Linux, how audio works, how applications are i
 
 ## What is this document? 
 
-An introduction to professional music and audio production on Linux via high-level overview of audio-centric linux system components and configurations. Effort has been made to keep this document as concise as possible to reduce friction for the initiate. Lists of software, configurations, and associated programs can be found in the appendix.
+An introduction to professional music and audio production on Linux via high-level overview of audio-centric Linux system components and configurations. Effort has been made to keep this document as concise as possible to reduce friction for the initiate. Lists of software, configurations, and associated programs can be found in the appendix.
 
 ### What this document is not
 
@@ -39,7 +39,7 @@ Links to select learning guides and resources are provided in the appendix.
 
 ### Why not a guide?
 
-Software changes quickly. High and low level changes happen *all the time*. These are rarely breaking, but sometimes (and especially recently) they are. We are experiencing an epocal shift at the moment away from ALSA+PulseAudio to ALSA+Pipewire. JACK remains constant for the Linux Musician, but it's configuration and use under pipewire is very different than it was previously. In general, the Linux world is one of vast choices. Head over to [DistroWatch.com](https://distrowatch.com/) and page through the different categories from distributions to package management systems and you will quickly understand why a single guide to *anything* Linux is impossible.
+Software changes quickly. High and low level changes happen *all the time*. These are rarely breaking, but sometimes (and especially recently) they are. We are experiencing an epochal shift at the moment away from ALSA+PulseAudio to ALSA+Pipewire. JACK remains constant for the Linux Musician, but it's configuration and use under pipewire is very different than it was previously. In general, the Linux world is one of vast choices. Head over to [DistroWatch.com](https://distrowatch.com/) and page through the different categories from distributions to package management systems and you will quickly understand why a single guide to *anything* Linux is impossible.
 
 ### How to use this document
 
@@ -47,9 +47,9 @@ Read it. Any or all of it. If something is incomplete or confusing, let me know 
 
 # 1. How Does My Computer Work?
  
-All of the following sections will be more or less true for you on capitol "L" Linux. However, as you are probably aware, there are many flavors of Linux, different kernels, different init systems, and many audio servers/mixers that sit on top of the Linux audio stack.
+The following sections will be more or less true for you on capitol "L" Linux. However, as you are probably aware, there are many flavors of Linux, different kernels, different init systems, and many audio servers/mixers that sit on top of the Linux audio stack.
 
-__Takeaway:__ You may need to dig further if any of the components mentioned below are not 100% relevent to you (in other words, if you don't have the program or config file mentioned). Differences in software stacks will mostly affect configurations and configuration file locations. (Or, even whether those configuration files are there to begin with, or must be created by you.)
+__Takeaway:__ You may need to dig further if any of the components mentioned below are not 100% relevant to you (in other words, if you don't have the program or config file mentioned). Differences in software stacks will mostly affect configurations and configuration file locations. (Or, even whether those configuration files are there to begin with, or must be created by you.)
 
 ## 1.a What is a Linux Distribution?
 
@@ -73,7 +73,7 @@ This is literal Linux. Everything else sits on top of the kernel and provides th
 
 To record or mix audio, especially with live performance, low system latency is required. Most, if not all, pro audio systems will use either a __real-time__ (RT) or __low-latency__ kernel. This allows the prioritization of audio processes (at the expense of others) to avoid delays in the processing of audio signals. Your distribution should provide one or the other (or more rarely, both.)
 
-__Takeaway:__ You should use a RT or low-latency kernel depending on which is available from your distro (Arch has a realtime kernel, ubuntu only has a low-latency kernel.) If you are a hobbyist, a real-time kernel is probably not necessary and you can get away with some tuning of a low-latency kernel.
+__Takeaway:__ You should use a RT or low-latency kernel depending on which is available from your distro (Arch has a real time kernel, Ubuntu only has a low-latency kernel.) If you are a hobbyist, a real-time kernel is probably not necessary and you can get away with some tuning of a low-latency kernel.
 
 ## 1.e The Init System
 
@@ -180,7 +180,7 @@ __Takeaway:__ Errors when trying to run JACK applications or start JACK via CLI 
 
 # 3. Windows Software/Plugins (bridges)
 
-Native Linux software and plugins work best on Linux. However, it is possible to run Windows software and plugins on Linux using compatibilty software. It should be noted, however, that there are limitations to the functionality of some software. Care should be given to researching whether software or plugins are supported by the following applications. See the Windows supported software links in the Appendix.
+Native Linux software and plugins work best on Linux. However, it is possible to run Windows software and plugins on Linux using compatibility software. It should be noted, however, that there are limitations to the functionality of some software. Care should be given to researching whether software or plugins are supported by the following applications. See the Windows supported software links in the Appendix.
 
 ## 3.a Wine
 
