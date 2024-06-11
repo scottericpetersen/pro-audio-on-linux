@@ -238,9 +238,11 @@ It is possible to configure your Linux system to use different input and output 
 
 ## 4.f CLI Utilities
 
-Modern general purpose programming languages like Python have extensive audio processing abilities through its vast library (module) system. However, there are command-line tools specifically to process audio files, including batch processing. Examples include sox.
+Modern general purpose programming languages like Python have extensive audio processing abilities through its vast library (module) system. However, there are command-line tools specifically to process audio files, including batch processing. Examples include [sox](https://archlinux.org/packages/extra/x86_64/sox/) and [ffmpeg](https://archlinux.org/packages/extra/x86_64/ffmpeg/).
 
-__Takeaway:__ If you need to normalize and add fade-ins and fade-outs to 137 audio files you recorded of Blue Whale song, you are better off using a CLI utility than a DAW or high-level program like SuperCollider.
+__Takeaway:__ If you need to normalize and add fade-ins and fade-outs to 137 audio files you recorded of Blue Whale song, you are better off using a CLI utility than a DAW or high-level program like SuperCollider. Programs like SoX also install CLI tools like "play" that allow you to 1) very quickly audition sound files from the CLI and 2) display information about the file while you do so.
+
+
 
 # 5. Audio and MIDI Hardware
 
@@ -372,6 +374,10 @@ https://manual.ardour.org/synchronization/latency-and-latency-compensation/
 __Hardware Compatibility (audio interfaces)__
 
 https://interfacinglinux.com/linux-compatible-audio-interfaces/
+
+__SoX Tutorial__
+
+https://madskjeldgaard.dk/posts/sox-tutorial-cli-tape-music/
 
 ### Windows Software on Linux
 
