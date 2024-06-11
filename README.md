@@ -230,7 +230,7 @@ Plugins are typically created by independent, third party developers, though the
 
 ## 4.d Audio Programming Languages
 
-Experimental computer music and live performance practices including live coding are usually accomplished in an audio domaine specific language such as Csound or SuperCollider. These programs are available from most distros, but recent versions (esp SuperCollider) may have to be built from source. 
+Experimental computer music and live performance practices including live coding are usually accomplished in an audio domain-specific language (DSL) such as Csound or SuperCollider. These programs are available from most distros, but recent versions (esp SuperCollider) may have to be built from source. 
 
 ## 4.e Configuration and Audio Routing Utilities
 
@@ -248,7 +248,7 @@ Any audio or MIDI interface that is USB class compliant can be used with a Linux
 
 ## 5.a Audio Devices
 
-In some cases, especially with large IO (8 in, 8 out) audio interfaces, some configuration will be necessary, either by designating the device as a "pro audio" device in pavucontrol, or by using ALSA UCM to expose all of the device IO to the audio server software sitting above it. 
+In some cases, especially with large IO (8 in, 8 out) audio interfaces, some configuration will be necessary, either by designating the device as a [pro audio](https://gitlab.freedesktop.org/pipewire/pipewire/-/wikis/FAQ#what-is-the-pro-audio-profile) device in pavucontrol, or by using ALSA UCM to expose all the device input and output channels to the audio server software sitting above it. 
 
 Devices that are not class compliant and that do not have Linux drivers written for ALSA will not be usable on a Linux system. Additionally, even devices that are class compliant (ex. Scarlett 2i2, RME Babyface) will not be able to use any proprietary mixer software that ships with the device as these are invariably Mac/Windows only, and wine does not provide the ability to pass through device controls (hardware.) This means that the class compliant device needs to be able to be fully controlled by the hardware. Some devices have multiple modes they can operate in that render them class compliant (read: controllable via hardware alone.)
 
@@ -256,7 +256,7 @@ Devices that are not class compliant and that do not have Linux drivers written 
 
 Like audio devices, MIDI controllers connect to the system mostly via USB and are exposed to the system via ALSA. And, like audio devices, MIDI controllers may have proprietary functionality that will not work on a Linux system. A proper example of this is the AutoMap feature built-into Novation MIDI devices. They are not available in AutoMap mode despite being class compliant. Disabling Automap mode makes the hardware usable. 
 
-Further, MIDI devices are extremely custimizable and often include multiple mappings (presets) for the control change knobs, faders, and buttons, and even the note-on/note-off keys of the standard MIDI keyboard. Checking what is being communicated from a MIDI device requires use of a utility such as midisnoop. 
+Further, MIDI devices are extremely customizable and often include multiple mappings (presets) for the control change knobs, faders, and buttons, and even the note-on/note-off keys of the standard MIDI keyboard. Checking what is being communicated from a MIDI device requires use of a utility such as midisnoop. 
 
 # 6. CLI Software Tools for Testing and Configuration
 
@@ -287,7 +287,9 @@ Configuration files: jackd.conf (without pipewire)
 Configuration software: wireplumber
 Configuration files: wireplumber.conf
 
-**Gotcha:** Sometimes programs are installed by other programs. This is either because they are dependencies of that program, or because a given package installs multiple applications. This can be confusing when looking for conflicting packages or updates to a program where the packagename for said program differs from the program itself. An example is the alsa-utils meta package which installs the a ton of programs including aplay, alsamixer, alsactl, amidi, alsa-info, etc.
+**Gotcha:** Sometimes programs are installed by other programs. This is either because they are dependencies of that program, or because a given package installs multiple applications. This can be confusing when looking for conflicting packages or updates to a program where the package name for said program differs from the program itself. An example is the alsa-utils meta package which installs a number of programs including aplay, alsamixer, alsactl, amidi, alsa-info, [etc](https://archlinux.org/packages/extra/x86_64/alsa-utils/)*.
+
+*Click where it says "View the file list for alsa-utils" under package contents. Everything installed to /usr/bin/ is an application. Everything installed to /usr/lib/ is a ... library. See [here](https://refspecs.linuxfoundation.org/FHS_2.3/fhs-2.3.html) to learn more about where executable programs, libraries, and other software are typically installed on a Linux system. 
 
 # 7. Setup and Getting to Work
 
@@ -316,7 +318,7 @@ Below are an overview of steps one might take to tune their system for pro audio
 - Turn off notifications which grab both the video and audio thread
 - Quit KDE Connect if you use it (your phone notifications will pop-up on your desktop)
 - Turn off wi-fi
-- Chuck your smart phone in the trash. (okay, this isn't necessary, but it is a good idea.)
+- Chuck your smartphone in the trash. (okay, this isn't necessary, but it is a good idea.)
 
 **For listening/mixing:**
 
