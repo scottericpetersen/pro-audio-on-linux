@@ -242,7 +242,7 @@ Modern general purpose programming languages like Python have extensive audio pr
 
 __Takeaway:__ If you need to normalize and add fade-ins and fade-outs to 137 audio files you recorded of Blue Whale song, you are better off using a CLI utility than a DAW or high-level program like SuperCollider. Programs like SoX also install CLI tools like "play" that allow you to 1) very quickly audition sound files from the CLI and 2) display information about the file while you do so.
 
-
+![playing an audio file with 'play'](https://github.com/scottericpetersen/pro-audio-on-linux/blob/main/images/play_cli.png)
 
 # 5. Audio and MIDI Hardware
 
