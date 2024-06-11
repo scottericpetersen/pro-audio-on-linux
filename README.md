@@ -238,11 +238,44 @@ It is possible to configure your Linux system to use different input and output 
 
 ## 4.f CLI Utilities
 
-Modern general purpose programming languages like Python have extensive audio processing abilities through its vast library (module) system. However, there are command-line tools specifically to process audio files, including batch processing. Examples include [sox](https://archlinux.org/packages/extra/x86_64/sox/) and [ffmpeg](https://archlinux.org/packages/extra/x86_64/ffmpeg/).
-
-__Takeaway:__ If you need to normalize and add fade-ins and fade-outs to 137 audio files you recorded of Blue Whale song, you are better off using a CLI utility than a DAW or high-level program like SuperCollider. Programs like SoX also install CLI tools like "play" that allow you to 1) very quickly audition sound files from the CLI and 2) display information about the file while you do so.
+Modern general purpose programming languages like Python have extensive audio processing abilities through its vast library (module) system. However, there are command-line tools specifically to process audio files, including batch processing. Examples include [sox](https://archlinux.org/packages/extra/x86_64/sox/) and [ffmpeg](https://archlinux.org/packages/extra/x86_64/ffmpeg/). Programs like SoX also install useful CLI tools like "play" that allow you to 1) very quickly audition sound files from the CLI and 2) display information about the file while you do so.
 
 ![playing an audio file with 'play'](https://github.com/scottericpetersen/pro-audio-on-linux/blob/main/images/play_cli.png)
+
+[libsndfile](https://archlinux.org/packages/extra/x86_64/libsndfile/) is a C library for reading and writing audio files and it too installs a number of very useful programs including sndfile-info which, again, gives you quick and easy insight into the nature of any sound file. (Useful for 
+
+```
+nodenoise@nodelap:~/Music/tape$ sndfile-info side_a.aif 
+========================================
+File : side_a.aif
+Length : 63504112
+FORM : 63504104
+ AIFC
+ FVER : 4
+ COMM : 64
+  Sample Rate : 44100
+  Frames      : 4356992
+  Channels    : 2
+  Sample Size : 16
+  Encoding    : sowt => Signed integer (little-endian) linear PCM
+ SSND : 17427976
+  Offset     : 0
+  Block Size : 0
+ APPL : 46076024 (too big, skipping)
+Request for header allocation of 92152048 denined.
+
+----------------------------------------
+Sample Rate : 44100
+Frames      : 4356992
+Channels    : 2
+Format      : 0x10020002
+Sections    : 1
+Seekable    : TRUE
+Duration    : 00:01:38.798
+Signal Max  : 28870 (-1.10 dB)
+```
+
+__Takeaway:__ If you need to normalize and add fade-ins and fade-outs to 137 audio files you recorded of Blue Whale song, you are better off using a CLI utility than a DAW or high-level program like SuperCollider.
 
 # 5. Audio and MIDI Hardware
 
