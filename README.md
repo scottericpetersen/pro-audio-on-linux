@@ -242,7 +242,7 @@ Modern general purpose programming languages like Python have extensive audio pr
 
 ![playing an audio file with 'play'](https://github.com/scottericpetersen/pro-audio-on-linux/blob/main/images/play_cli.png)
 
-[libsndfile](https://archlinux.org/packages/extra/x86_64/libsndfile/) is a C library for reading and writing audio files and it too installs a number of very useful programs including sndfile-info which, again, gives you quick and easy insight into the nature of any sound file. (Useful for 
+[libsndfile](https://archlinux.org/packages/extra/x86_64/libsndfile/) is a C library for reading and writing audio files and it too installs a number of very useful programs including sndfile-info which, again, gives you quick and easy insight into the nature of any sound file.
 
 ```
 nodenoise@nodelap:~/Music/tape$ sndfile-info side_a.aif 
