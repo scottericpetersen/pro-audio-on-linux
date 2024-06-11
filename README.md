@@ -230,7 +230,7 @@ Plugins are typically created by independent, third party developers, though the
 
 ## 4.d Audio Programming Languages
 
-Experimental computer music and live performance practices including live coding are usually accomplished in an audio domain-specific language (DSL) such as Csound or SuperCollider. These programs are available from most distros, but recent versions (esp SuperCollider) may have to be built from source. 
+Experimental computer music and live performance practices including live coding are usually accomplished in an audio domain-specific language (DSL) such as [Csound](https://csound.com/) or [SuperCollider](https://supercollider.github.io/). These programs are available from most distros, but recent versions (esp SuperCollider) may have to be built from source. 
 
 ## 4.e Configuration and Audio Routing Utilities
 
