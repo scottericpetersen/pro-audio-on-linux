@@ -131,7 +131,6 @@ Jack Audio Connection Kit is the OG low-latency audio server/mixer. Most pro aud
 A modern pro audio setup that does not use pipewire typically consists of JACK running on top of ALSA with PulseAudio and MIDI bridged to it to allow general system programs and devices to work seamlessly with JACK.
 
 ```mermaid
-flowchart LR
 ---
 title: Bridging Required
 ---
@@ -139,6 +138,7 @@ flowchart LR
     ALSA <-- IO --> JACK
     ALSA-MIDI --> a2jmidid --> JACK
     PulseAudio --> pulseaudio-module-jack --> JACK
+    
 ```
 
 If you want to use JACK without pipewire (no longer recommended), you are **strongly** encouraged to add the KXStudio repositories and install [Cadence](https://kx.studio/Applications:Cadence). Cadence can be used to configure JACK and bridge both PulseAudio and ALSA MIDI. Otherwise, you will have to install additional software and correctly create multiple configuration files.
