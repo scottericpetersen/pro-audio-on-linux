@@ -120,23 +120,23 @@ Example Audio Stack Using Pipewire
 
 ***ALSA*** provides hardware interfacing and device drivers for audio hardware (input and output.) Because it is part of the kernel, ALSA is present on Linux systems. 
 
-One important "feature" of ALSA that shows why the following sections on audio servers exist, is that it provides connection to system hardware (built-in or USB, etc) to *only one client* at a time. This means if you directly choose ALSA as the sound server of choice in your DAW, no other audio sources on your system (ex. Spotify running in a browser) will have access to the audio card.
+ALSA provides device connections (built-in or USB, etc) to *only one client* at a time. This means if you directly choose ALSA as the sound server of choice in your DAW, no other audio sources on your system (ex. Spotify running in a browser) will have access to the audio card. Server/mixers like Pipewire exist to provide broader and more flexible access to hardware and software devices. These server/mixers sit above ALSA in the audio stack.
 
-__Takeaway:__ If ALSA is misconfigured, or is not able to provide a driver for an audio device, that device will be unavailable to any server above ALSA like JACK, Pulse or Pipewire. If a device is unavailable (not seen or misconfigured) in Pulse, the problem may be either with Pulse or with ALSA or the device is not compatible with a Linux system. 
+__Takeaway:__ If ALSA is misconfigured or is not able to provide a driver for an audio device, that device will be unavailable to any server above ALSA like JACK, Pulse or Pipewire. If a device is unavailable (not seen or misconfigured) in Pulse, the problem may be either with Pulse or with ALSA or the device is not compatible with a Linux system. 
 
 ## 2.b PulseAudio (server/mixer)
 
-***Pulseaudio*** is a mixer/sound server that sits on top of ALSA and allows multiple programs and system components to access audio IO. Pulseaudio, through programs like ***pavucontrol***, also provides the ability to configure hardware devices and set volume levels using computer hardware buttons. 
+***Pulseaudio*** is a mixer/sound server that sits on top of ALSA and allows multiple programs and system components to access audio IO. Through programs like ***pavucontrol***, PulseAudio also provides configuration of hardware devices (muting, setting volume levels, etc) using computer hardware buttons. 
 
 __Pulseaudio is not a low-latency application and therefore unsuitable for pro audio.__ However, your system probably still uses it for general audio mixing.
 
-__Takeaway:__ Most modern systems, even those that use pipewire as the default audio server, still have PulseAudio or compatibility libraries for it (pipewire-pulse) installed to provide components and GUIs for adjusting volumes, muting channels, and choosing different audio devices.
+__Takeaway:__ Most modern systems, even those that use pipewire as the default audio server, still have PulseAudio or compatibility libraries for it (pipewire-pulse) installed to provide components and GUIs for adjusting volumes, muting channels, and choosing different audio devices without having to edit config files or use the CLI.
 
 ## 2.c JACK (server/mixer)
 
 Jack Audio Connection Kit is the OG low-latency audio server/mixer. Most pro audio applications *want* it (ex. Ardour), and some *require* it (ex. SuperCollider). It can be tuned by editing its configuration files (jackd.conf) or using GUIs like such as QJackCTL or QPWGraph.
 
-A modern pro audio setup *not using pipewire* typically consists of JACK running on top of ALSA with PulseAudio and MIDI bridged to it to allow general system programs and devices to work seamlessly with JACK.
+A modern pro audio setup that does not use pipewire typically consists of JACK running on top of ALSA with PulseAudio and MIDI bridged to it to allow general system programs and devices to work seamlessly with JACK.
 
 ```
 ALSA MIDI -> bridge    ---
@@ -146,13 +146,13 @@ PulseAudio -> bridge -> JACK -> ALSA
 
 ```
 
-If you want to use JACK without pipewire (no longer recommended), I **strongly** suggest adding the KXStudio repositories and installing [Cadence](https://kx.studio/Applications:Cadence). You can use Cadence to configure JACK and bridge both PulseAudio and ALSA MIDI from the same application. Otherwise, you will have to install additional software and correctly create multiple configuration files.
+If you want to use JACK without pipewire (no longer recommended), you are **strongly** encouraged to add the KXStudio repositories and install [Cadence](https://kx.studio/Applications:Cadence). Cadence can be used to configure JACK and bridge both PulseAudio and ALSA MIDI. Otherwise, you will have to install additional software and correctly create multiple configuration files.
 
 ## 2.d PipeWire (server/mixer)
 
-Pipewire is the next generation audio (and video) server for Linux. It unifies handling of JACK and PulseAudio clients through pipewire-jack and pipewire-pulse packages. This means that applications that expect or require PulseAudio or JACK will work with pipewire via these packages. Pipewire can be configured for low-latency audio either universally or on an application-by-application basis. Configuring pipewire can be challenging, but pipewire documentation is very good and there are plenty of guides (see Appendix). Policy for pipewire is managed by Wireplumber.
+Pipewire is the next generation audio (and video) server for Linux. It unifies handling of JACK and PulseAudio clients through pipewire-jack and pipewire-pulse packages. Applications that expect or require PulseAudio or JACK will work with pipewire via these packages. Pipewire can be configured for low-latency audio either universally or on an application-by-application basis. Configuring pipewire can be challenging, but pipewire documentation is very good and there are plenty of guides (see Appendix). Policy for pipewire is managed by Wireplumber.
 
-__Takeaway:__ Pipewire (pipewire-jack) is flexible and low-latency with performance on par with JACK. Configuring it properly requires work. **Ignore old documentation for systems referencing pipewire-media-session which was replaced by wireplumber.**
+__Takeaway:__ Pipewire (pipewire-jack) is flexible and has latency on par with JACK. Configuring it properly requires work. **Ignore old documentation for systems referencing pipewire-media-session which was replaced by wireplumber.**
 
 ## 2.e WirePlumber (session manager for pipewire)
 
