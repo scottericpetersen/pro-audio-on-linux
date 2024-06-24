@@ -134,10 +134,10 @@ A modern pro audio setup that does not use pipewire typically consists of JACK r
 ---
 title: Bridging Required
 ---
-flowchart LR
-    ALSA <-- IO --> JACK
+flowchart TD
+    JACK <-- IO --> ALSA 
     ALSA-MIDI --> a2jmidid --> JACK
-    PulseAudio --> pulseaudio-module-jack --> JACK
+    PulseAudio --> pulseaudio-module-jack --> JACK   
     
 ```
 
