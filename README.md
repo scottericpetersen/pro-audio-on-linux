@@ -327,7 +327,9 @@ Below are an overview of steps one might take to tune their system for pro audio
 
 ## 7.a Sane Audio Tuning Strategy
 
-0. **Start with professional hardware**. Built-in audio cards do not provide a low-latency or high-quality experience. Similarly, even low-spec modern laptops are typically able to handle reasonably complex DAW projects without too much effort. However, RAM and CPU architecture *do* matter at the low-end where older i3 chips and 2-4GB of RAM may see you with latency/glitch problems related to low RAM and scheduling bottlenecks.
+0. **Start with professional hardware**.
+   - Built-in audio cards do not provide a low-latency or high-quality experience. Any class-compliant USB device will be better than the built-in audio chip on a laptop or desktop computer. RME, MOTU, and Focusrite are popular and well-supported devices on Linux. See the appendix below for audio compatibility links and links to communities where questions can be asked and answered.
+   - Low-spec modern laptops are typically able to handle reasonably complex DAW projects without too much effort, but RAM and CPU architecture *do* matter at the low-end where older i3 chips and 2-4GB of RAM may see you with latency/glitch problems related to low RAM and scheduling bottlenecks.
 1. **Start from scratch**. (if system is currently broken, purge all configs or start with a fresh install)
 2. **Install an rt or low-latency kernel** -- whichever is available on your system.
 3. Install a **CPU management application** to allow setting the processor to a power setting or follow instructions here: https://wiki.linuxaudio.org/wiki/system_configuration#do_i_really_need_a_real-time_kernel
