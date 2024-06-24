@@ -107,23 +107,6 @@ flowchart LR
 
 pipewire <--pipewire-pulse--> Browser
 ```
-```
-Example Audio Stack Using Pipewire                                               
-                                                                 +---------------+
-                                                                 | SuperCollider |
-                                            +----------------+   | (jack client) |
- +--------+              +----------+       |   PIPEWIRE     |   +---------------+
- | Audio/ | --- IN  ---> |   ALSA   |  I/O  |                |           ^        
- | MIDI   |              | DRIVERS  | <---> | pipewire-jack  | <---------+        
- | Device | <-- OUT ---  |          |       |                |                    
- +--------+              +----------+       | pipewire-pulse | <---------+        
-                                            +----------------+           v        
-                                                                 +---------------+
-                                                                 |   Browser/    |
-                                                                 |   YouTube     |
-                                                                 |(Pulse client) |
-                                                                 +---------------+
-```
 
 ## 2.a Kernel level - ALSA
 
