@@ -122,7 +122,7 @@ __Takeaway:__ If ALSA is misconfigured or is not able to provide a driver for an
 
 __Pulseaudio is not a low-latency application and therefore unsuitable for pro audio.__ However, your system probably still uses it for general audio mixing.
 
-__Takeaway:__ Most modern systems, even those that use pipewire as the default audio server, still have PulseAudio or compatibility libraries for it (pipewire-pulse) installed to provide components and GUIs for adjusting volumes, muting channels, and choosing different audio devices without having to edit config files or use the CLI.
+__Takeaway:__ Most modern systems, even those that use PipeWire as the default audio server, still provide a “PulseAudio layer” (either the actual PulseAudio daemon or PipeWire’s `pipewire-pulse` compatibility service) plus desktop mixers. These components and GUIs let you adjust volumes, mute channels, and choose devices without editing config files or using the CLI.
 
 ## 2.c JACK (server/mixer)
 
@@ -333,11 +333,14 @@ Below are an overview of steps one might take to tune their system for pro audio
 1. **Start from scratch**. (if system is currently broken, purge all configs or start with a fresh install)
 2. **Install an rt or low-latency kernel** -- whichever is available on your system.
 3. Install a **CPU management application** to allow setting the processor to a power setting or follow instructions here: https://wiki.linuxaudio.org/wiki/system_configuration#do_i_really_need_a_real-time_kernel
-4. **Install pipewire, pipewire-jack, and wireplumber** (if they are not already installed) in the best way for your system and enable them. Currently, Ubuntu-based distros will require the [upstream](https://pipewire-debian.github.io/pipewire-debian/) package for 1.0+ pipewire (required!)
-5. Use a low-latency USB audio device (ex Scarlett 2i2, RME Babyface) and be sure to **designate the device as a "pro audio" device** using pavucontrol or by using ALSA UCMs [(See here)](https://www.scottericpetersen.com/multichannel-audio-devices-and-linux-not-a-love-story/).
-6. Reduce latency for your applications by creating a [pipewire policy for JACK](https://docs.pipewire.org/page_man_pipewire-jack_conf_5.html) to lower the latency/quantum. 
-7. Download and run [rtcqs](https://codeberg.org/rtcqs/rtcqs) to make sure your setup is sane and working and all desired mitigations are en/disabled. There is a GUI wrapper as well called [Millisecond](https://github.com/gaheldev/Millisecond) if you prefer that.
-8. Install the audio software of your choice. Try to use packages provided from your maintainers, or trusted sources (PPAs update well, or get direct from the author via GitHub or their website.)  See Appendix B for lists of software.
+4. **Install pipewire, pipewire-jack, and wireplumber** (if they are not already installed) in the best way for your system and enable them.
+   - On many current distros (Arch, Fedora, Ubuntu 22.10+ and Ubuntu Studio 24.04+), PipeWire 1.x is already the default audio stack and only needs to be configured.
+   - On older Ubuntu/Debian releases, you may still need an upstream/third-party package source (e.g. the pipewire-debian packages) to get a sufficiently recent PipeWire. Check your distro’s docs before adding a PPA.
+5. **Install pipewire, pipewire-jack, and wireplumber** (if they are not already installed) in the best way for your system and enable them. Currently, Ubuntu-based distros will require the [upstream](https://pipewire-debian.github.io/pipewire-debian/) package for 1.0+ pipewire (required!)
+6. Use a **low-latency USB** or **Thunderbolt** audio interface. If you are using a USB device, be sure to switch it into its multichannel / “Pro Audio” profile via pavucontrol or ALSA UCM (if you have more than 2 channel IO). Thunderbolt interfaces typically don't use PulseAudio-style profiles and will appear directly to ALSA/PipeWire as multichannel devices without additional configuration. [(See here)](https://www.scottericpetersen.com/multichannel-audio-devices-and-linux-not-a-love-story/).
+7. Reduce latency for your applications by creating a [pipewire policy for JACK](https://docs.pipewire.org/page_man_pipewire-jack_conf_5.html) to lower the latency/quantum. 
+8. Download and run [rtcqs](https://codeberg.org/rtcqs/rtcqs) to make sure your setup is sane and working and all desired mitigations are en/disabled. There is a GUI wrapper as well called [Millisecond](https://github.com/gaheldev/Millisecond) if you prefer that.
+9. Install the audio software of your choice. Try to use packages provided from your maintainers, or trusted sources (PPAs update well, or get direct from the author via GitHub or their website.)  See Appendix B for lists of software.
 
 ## 7.b Best Practices
 
@@ -389,13 +392,9 @@ https://github.com/mikeroyal/PipeWire-Guide?tab=readme-ov-file
 
 ### Misc
 
-__Overview of ALSA, Pulse__
-
-https://thelinuxcode.com/guide_linux_audio/
-
 __Understanding MIDI on Linux__
 
-http://www.tedfelix.com/linux/linux-midi.html
+http://www.tedfelix.com/linux/linux-midi.html (note: not https -- may require you accept "risk" to access.)
 
 __Accounting for Latency in Ardour:__
 
@@ -407,7 +406,7 @@ https://interfacinglinux.com/linux-compatible-audio-interfaces/
 
 __SoX Tutorial__
 
-https://madskjeldgaard.dk/posts/sox-tutorial-cli-tape-music/
+https://madskjeldgaard.dk/old-blog/sox-tutorial-cli-tape-music/
 
 ### Windows Software on Linux
 
