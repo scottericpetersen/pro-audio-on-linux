@@ -336,7 +336,7 @@ Below are an overview of steps one might take to tune their system for pro audio
 4. **Install pipewire, pipewire-jack, and wireplumber** (if they are not already installed) in the best way for your system and enable them. Currently, Ubuntu-based distros will require the [upstream](https://pipewire-debian.github.io/pipewire-debian/) package for 1.0+ pipewire (required!)
 5. Use a low-latency USB audio device (ex Scarlett 2i2, RME Babyface) and be sure to **designate the device as a "pro audio" device** using pavucontrol or by using ALSA UCMs [(See here)](https://www.scottericpetersen.com/multichannel-audio-devices-and-linux-not-a-love-story/).
 6. Reduce latency for your applications by creating a [pipewire policy for JACK](https://docs.pipewire.org/page_man_pipewire-jack_conf_5.html) to lower the latency/quantum. 
-7. Download and run [rtcqs](https://github.com/autostatic/rtcqs) to make sure your setup is sane and working and all desired mitigations are en/disabled.
+7. Download and run [rtcqs](https://codeberg.org/rtcqs/rtcqs) to make sure your setup is sane and working and all desired mitigations are en/disabled. There is a GUI wrapper as well called [Millisecond](https://github.com/gaheldev/Millisecond) if you prefer that.
 8. Install the audio software of your choice. Try to use packages provided from your maintainers, or trusted sources (PPAs update well, or get direct from the author via GitHub or their website.)  See Appendix B for lists of software.
 
 ## 7.b Best Practices
