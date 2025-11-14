@@ -1,6 +1,6 @@
 # An Introduction to Pro Audio on Linux for the Recently Initiated
 
-If you are new to making music on Linux, how audio works, how applications are installed and configured, essentially *everything* can be confusing. This document aims to provide a high level overview of the Linux audio technosystem for those new to Linux, but not necessarily to making music.
+If you are new to making music on Linux, how audio works, how applications are installed and configured, essentially *everything* can be confusing. This document aims to provide a high level overview of the Linux audio technosystem for those new to Linux, but not necessarily to making music with computers.
 
 # Table of Contents
 
