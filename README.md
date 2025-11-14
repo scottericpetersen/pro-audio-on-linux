@@ -444,7 +444,11 @@ __A curated list of music DSP and audio programming resources__
 
 https://github.com/olilarkin/awesome-musicdsp
 
-## c. Web Communities [IN PROGRESS]
+## c. Web Communities
+
+__Linux Audio Users (LAU) mailing list__
+
+https://lists.linuxaudio.org/postorius/lists/linux-audio-user.lists.linuxaudio.org/
 
 __Linux Musicians__
 
@@ -454,7 +458,14 @@ __Reddit Linux Audio__
 
 https://www.reddit.com/r/linuxaudio/
 
-## d. Working with Files (Configuration Gotchas) [IN PROGRESS]
+__Discord Linux Audio Server__
+
+I don't know if this original link is still valid, but it was at one point. You should be able 
+to search for the Discord anyway. But I don't really know how Discord works despite using it.
+
+https://discord.gg/TNNds5BWe6
+
+## d. Working with Files (Configuration Gotchas)
 
 This doesn't have a logical home in the body of this document, but when configuring a system for pro audio, there are some common gotchas that crop up and can be found in guides and troubleshooting docs all over. Here are a few for completeness.
 
