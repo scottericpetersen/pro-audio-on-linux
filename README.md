@@ -424,6 +424,14 @@ https://github.com/robbert-vdh/yabridge?tab=readme-ov-file#known-issues-and-fixe
 
 ## b. Software Lists [IN PROGRESS]
 
+__Linux Drivers and Hardware Support Projects__
+
+RME HDSPE Devices
+https://github.com/PhilippeBekaert/snd-hdspe
+
+Focusrite Scarlett, Clarett, and Vocaster support
+https://github.com/geoffreybennett/linux-fcp?tab=readme-ov-file#setup-instructions
+
 __Audio Specific Linux Distributions__
 
 https://wiki.linuxaudio.org/apps/categories/distributions
