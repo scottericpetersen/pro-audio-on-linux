@@ -71,7 +71,7 @@ There are distributions that also have repositories for their software that can 
 
 This is literal Linux. Everything else sits on top of the kernel and provides the interfaces and software you use. The Linux kernel defines how your OS works to accomplish what it does using your specific computer hardware. 
 
-To record or mix audio, especially with live performance, low system latency is required. Most, if not all, pro audio systems will use either a __real-time__ (RT) or __low-latency__ kernel. This allows the prioritization of audio processes (at the expense of others) to avoid delays in the processing of audio signals. Your distribution should provide one or the other (or more rarely, both.)
+To record or mix audio, especially with live performance, low system latency is required. Most, if not all, *pro audio* systems will use either a __real-time__ (RT) or __low-latency__ kernel. This prioritizes audio processes (at the expense of others) to avoid delays in the processing of audio signals. Your distribution should provide one or the other (or more rarely, both.) However, because of recent kernel advances, many users report adequate (for their purposes) latency using a stock (generic) kernel that has been tuned for audio performance. (See below [7. Setup and Getting to Work](#7-setup-and-getting-to-work))
 
 __Takeaway:__ You should use a RT or low-latency kernel depending on which is available from your distro (Arch has a real time kernel, Ubuntu only has a low-latency kernel.) If you are a hobbyist, a real-time kernel is probably not necessary and you can get away with some tuning of a low-latency kernel.
 
