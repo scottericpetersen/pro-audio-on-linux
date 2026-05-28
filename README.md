@@ -292,11 +292,11 @@ Further, MIDI devices are extremely customizable and often include multiple mapp
 
 Below, where a dollar sign prepends a command, the entire bold sequence must be entered at the command line (CLI). Otherwise, a "normal" standalone program is shown with (GUI) next to it. Using the CLI is empowering and fun. On your Linux system, use your OS launcher and type 'terminal' or search for 'terminal' in your Applications and you will find Terminal, Konsole, xterm, or any number of other terminal emulators.
 
-__System Tuning__
+## System Tuning
 
 **rtcqs** (CLI): audio system testing and tuning for pro audio configuration
 
-__Audio System Configuration Clients and Tools__
+## Audio System Configuration Clients and Tools
 
 **Pipewire/Wireplumber**
 
@@ -316,7 +316,7 @@ Configuration software: cadence, qjackctl
 
 Configuration files: jackd.conf (without pipewire)
 
-__MIDI Device Troubleshooting__
+## MIDI Device Troubleshooting
 
 **midisnoop** (GUI): MIDI connection testing
 
