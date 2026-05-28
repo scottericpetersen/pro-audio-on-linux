@@ -290,15 +290,19 @@ Further, MIDI devices are extremely customizable and often include multiple mapp
 
 # 6. Software Tools for Testing and Configuration
 
-Today, configuring your Linux system is easier than it's ever been (see Section 7 below). Still, tuning often still involves using the command line (CLI). Using the CLI is empowering and fun. On your Linux system, use your OS launcher and type 'terminal' or search for 'terminal' in your Applications and you will find Terminal, Konsole, xterm, or any number of other terminal emulators. To edit files in the CLI you can use your favorite text editor (vim, neovim, etc) or, if you are new to the CLI just use the built-in editor **nano**.
+Today, configuring your Linux system is easier than it's ever been (see Section 7 below). Still, tuning often still involves 1) finding *the config file being used* by your system, and 2) using the command line (CLI) to access and edit those files. Using the CLI is empowering and fun. On your Linux system, use your OS launcher and type 'terminal' or search for 'terminal' in your Applications and you will find Terminal, Konsole, xterm, or any number of other terminal emulators. To edit files in the CLI you can use your favorite text editor (vim, neovim, etc) or, if you are new to the CLI just use the built-in editor **nano**.
 
-Below, where a dollar sign ($) prepends a command, the entire code-block must be entered at the command line (CLI) minus the $ itself. Otherwise, a "normal" standalone program is shown with (GUI) next to it. To learn how to navigate the file hierarchy in Linux, please see [here](https://documentation.ubuntu.com/desktop/en/latest/tutorial/the-linux-command-line-for-beginners/) and understand that your installation programs and directories might be different.
+Below, where a dollar sign ($) prepends a command, the entire code-block must be entered at the command line (CLI) minus the $ itself. Otherwise, a "normal" standalone program is shown with (GUI) next to it. To learn how to navigate the file hierarchy in Linux, please see [here](https://documentation.ubuntu.com/desktop/en/latest/tutorial/the-linux-command-line-for-beginners/).
+
+A "what config file is currently being used?" tutorial is beyond the scope of this document. However, be aware that your system comes with default configuration files that live at system paths such as /etc/. Sometimes these are copied into the user directory to somewhere like /home/YOURUSERNAME/.config. Each program has its own default (system) and user locations. For any given program, the user config file may or may not exist. You can always create it by copying the default over from the system path to the user path. Please consult application documentation for those specific paths which vary by program and distro.
 
 ## 6.a System Tuning
 
 **rtcqs** (CLI): audio system testing and tuning for pro audio configuration
 
 You can often install rtcqs (pronounced ar-tee-seeks) from your distros app library or software repos (Discover, apt, etc), or you can find it [here](https://codeberg.org/rtcqs/rtcqs) and install it manually (what I had to do on OpenSuse).
+
+Ex: `$rtcqs` and follow prompts based on the program analysis.
 
 ## 6.b Audio System Configuration Clients and Tools
 
@@ -312,7 +316,7 @@ Configuration software: [Cable](https://github.com/magillos/Cable) (GUI)
 
 Configuration files: [wireplumber.conf](https://pipewire.pages.freedesktop.org/wireplumber/daemon/configuration/conf_file.html) (edit in CLI)
 
-Ex: `nano ~/.config/wireplumber/wireplumber.conf`
+Ex: `$nano ~/.config/wireplumber/wireplumber.conf`
 
 **JACK**
 
@@ -321,6 +325,8 @@ On modern systems with Pipewire/Wireplumber, you should not need to edit JACK co
 Configuration software: cadence (GUI), qjackctl (GUI)
 
 Configuration files: jackd.conf (only on systems _without_ pipewire) (edit in CLI)
+
+Ex: `$nano ~/.config/jackd.conf`
 
 ## 6.c MIDI Device Troubleshooting
 
