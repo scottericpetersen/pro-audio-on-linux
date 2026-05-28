@@ -303,7 +303,9 @@ __Audio System Configuration Clients and Tools__
 Application-specific settings (as opposed to system wide settings) can and should still be done using the wireplumber.conf file. However, for setting Samplerate, quantum, etc, and for a quick and easy routing/wiring utility, I now prefer the excellent [Cable](https://github.com/magillos/Cable) program.
 
 Configuration software: [Cable](https://github.com/magillos/Cable)
+
 **or**
+
 Configuration files: wireplumber.conf
 
 **JACK**
@@ -311,6 +313,7 @@ Configuration files: wireplumber.conf
 On modern systems with Pipewire/Wireplumber, you should not need to edit JACK configuration files. However, QJackCtl and similar programs are still useful for setting and saving session settings. In most instances, however, it is preferable to configure with a Pipewire/WirePlumber utility like Cable (see above.) 
 
 Configuration software: cadence, qjackctl
+
 Configuration files: jackd.conf (without pipewire)
 
 __MIDI Device Troubleshooting__
