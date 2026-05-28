@@ -92,7 +92,7 @@ This is how your system looks and feels. Plasma is a popular desktop and display
 
 Whether or not your system looks and "acts" like another Linux system is immaterial. Most sit on top of the same audio stack. You can change your desktop/window/display manager as you like *often* but not always without affecting the audio system. An example of losing some audio functionality would be switching your desktop environment from KDE Plasma to i3 where i3 has not been purposefully configured to load things like pavucontrol (see PulseAudio below), leaving your audio system without a proper desktop-level mixer (and you without volume controls).
 
-__Takeaway:__ Customizing your Linux system is part of what makes Linux awesome. Just be aware that changes to how your system looks *can* affect your audio system.
+__Takeaway:__ Customizing your Linux system is part of what makes Linux awesome. Just be aware that changes to how your system looks *can* affect your audio system, or rather, your ability to control and interact with it.
 
 # 2. The Linux Audio System
 
@@ -290,11 +290,28 @@ Further, MIDI devices are extremely customizable and often include multiple mapp
 
 # 6. CLI Software Tools for Testing and Configuration
 
-[INCOMPLETE - IN PROGRESS]
-
 Below, where a dollar sign prepends a command, the entire bold sequence must be entered at the command line (CLI). Otherwise, a "normal" standalone program is shown with (GUI) next to it. Using the CLI is empowering and fun. On your Linux system, use your OS launcher and type 'terminal' or search for 'terminal' in your Applications and you will find Terminal, Konsole, xterm, or any number of other terminal emulators.
 
+__System Tuning__
+
 **rtcqs** (CLI): audio system testing and tuning for pro audio configuration
+
+__Audio System Configuration Clients and Tools__
+
+**Pipewire/Wireplumber**
+
+Application-specific settings (as opposed to system wide settings) can and should still be done using the wireplumber.conf file. However, for setting Samplerate, quantum, etc, and for a quick and easy routing/wiring utility, I now prefer the excellent [Cable](https://github.com/magillos/Cable) program.
+
+Configuration software: [Cable](https://github.com/magillos/Cable)
+**or**
+Configuration files: wireplumber.conf
+
+**JACK**
+
+On modern systems with Pipewire/Wireplumber, you should not need to edit JACK configuration files. However, QJackCtl and similar programs are still useful for setting and saving session settings. In most instances, however, it is preferable to configure with a Pipewire/WirePlumber utility like Cable (see above.) 
+
+Configuration software: cadence, qjackctl
+Configuration files: jackd.conf (without pipewire)
 
 __MIDI Device Troubleshooting__
 
@@ -302,22 +319,14 @@ __MIDI Device Troubleshooting__
 
 **dmesg** and **lsusb**: helpful when diagnosing hardware problems.
 
+
+**Gotcha:** Sometimes programs are installed by other programs. This is either because they are dependencies of that program, or because a given package installs multiple applications. This can be confusing when looking for conflicting packages or updates to a program where the package name for said program differs from the program itself. An example is the alsa-utils meta package which installs a number of programs including aplay, alsamixer, alsactl, amidi, alsa-info, [etc](https://archlinux.org/packages/extra/x86_64/alsa-utils/)*.
+
 ### On systems with apt
 
 `$apt-cache rdepends --installed packagename`: lists packages that depend on a given package. 
 
 `$apt-cache depends --installed packagename`: lists dependencies (other required software) of a given package. 
-
-**JACK**
-Configuration software: cadence, qjackctl
-Configuration files: jackd.conf (without pipewire)
-
-**Pipewire/Wireplumber**
-
-Configuration software: wireplumber
-Configuration files: wireplumber.conf
-
-**Gotcha:** Sometimes programs are installed by other programs. This is either because they are dependencies of that program, or because a given package installs multiple applications. This can be confusing when looking for conflicting packages or updates to a program where the package name for said program differs from the program itself. An example is the alsa-utils meta package which installs a number of programs including aplay, alsamixer, alsactl, amidi, alsa-info, [etc](https://archlinux.org/packages/extra/x86_64/alsa-utils/)*.
 
 *Click where it says "View the file list for alsa-utils" under package contents. Everything installed to /usr/bin/ is an application. Everything installed to /usr/lib/ is a ... library. See [here](https://refspecs.linuxfoundation.org/FHS_2.3/fhs-2.3.html) to learn more about where executable programs, libraries, and other software are typically installed on a Linux system. 
 
