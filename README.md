@@ -14,9 +14,9 @@ If you are new to making music on Linux, how audio works, how applications are i
 
 [4. Audio Software](#4-audio-software)
 
-[5. Audio and MIDI Hardware](#5-audio-and-mIDI-hardware)
+[5. Audio and MIDI Hardware](#5-audio-and-midi-hardware)
 
-[6. CLI Software Tools](#6-cli-software-tools-for-testing-and-configuration)
+[6. Software Tools for Testing and Configuration](#6-software-tools-for-testing-and-configuration)
 
 [7. Setup and Getting to Work](#7-setup-and-getting-to-work)
 
@@ -27,7 +27,7 @@ If you are new to making music on Linux, how audio works, how applications are i
 
 # 0. About
 
-## What is this document? 
+## What is this document?
 
 An introduction to professional music and audio production on Linux via high-level overview of audio-centric Linux system components and configurations. Effort has been made to keep this document as concise as possible to reduce friction for the initiate. Lists of software, configurations, and associated programs can be found in the appendix.
 
@@ -288,35 +288,41 @@ Like audio devices, MIDI controllers connect to the system mostly via USB and ar
 
 Further, MIDI devices are extremely customizable and often include multiple mappings (presets) for the control change knobs, faders, and buttons, and even the note-on/note-off keys of the standard MIDI keyboard. Checking what is being communicated from a MIDI device requires use of a utility such as midisnoop. 
 
-# 6. CLI Software Tools for Testing and Configuration
+# 6. Software Tools for Testing and Configuration
 
-Below, where a dollar sign prepends a command, the entire bold sequence must be entered at the command line (CLI). Otherwise, a "normal" standalone program is shown with (GUI) next to it. Using the CLI is empowering and fun. On your Linux system, use your OS launcher and type 'terminal' or search for 'terminal' in your Applications and you will find Terminal, Konsole, xterm, or any number of other terminal emulators.
+Today, configuring your Linux system is easier than it's ever been (see Section 7 below). Still, tuning often still involves using the command line (CLI). Using the CLI is empowering and fun. On your Linux system, use your OS launcher and type 'terminal' or search for 'terminal' in your Applications and you will find Terminal, Konsole, xterm, or any number of other terminal emulators. To edit files in the CLI you can use your favorite text editor (vim, neovim, etc) or, if you are new to the CLI just use the built-in editor **nano**.
 
-## System Tuning
+Below, where a dollar sign ($) prepends a command, the entire code-block must be entered at the command line (CLI) minus the $ itself. Otherwise, a "normal" standalone program is shown with (GUI) next to it. To learn how to navigate the file hierarchy in Linux, please see [here](https://documentation.ubuntu.com/desktop/en/latest/tutorial/the-linux-command-line-for-beginners/) and understand that your installation programs and directories might be different.
+
+## 6.a System Tuning
 
 **rtcqs** (CLI): audio system testing and tuning for pro audio configuration
 
-## Audio System Configuration Clients and Tools
+You can often install rtcqs (pronounced ar-tee-seeks) from your distros app library or software repos (Discover, apt, etc), or you can find it [here](https://codeberg.org/rtcqs/rtcqs) and install it manually (what I had to do on OpenSuse).
+
+## 6.b Audio System Configuration Clients and Tools
 
 **Pipewire/Wireplumber**
 
 Application-specific settings (as opposed to system wide settings) can and should still be done using the wireplumber.conf file. However, for setting Samplerate, quantum, etc, and for a quick and easy routing/wiring utility, I now prefer the excellent [Cable](https://github.com/magillos/Cable) program.
 
-Configuration software: [Cable](https://github.com/magillos/Cable)
+Configuration software: [Cable](https://github.com/magillos/Cable) (GUI)
 
 **or**
 
-Configuration files: wireplumber.conf
+Configuration files: [wireplumber.conf](https://pipewire.pages.freedesktop.org/wireplumber/daemon/configuration/conf_file.html) (edit in CLI)
+
+Ex: `nano ~/.config/wireplumber/wireplumber.conf`
 
 **JACK**
 
 On modern systems with Pipewire/Wireplumber, you should not need to edit JACK configuration files. However, QJackCtl and similar programs are still useful for setting and saving session settings. In most instances, however, it is preferable to configure with a Pipewire/WirePlumber utility like Cable (see above.) 
 
-Configuration software: cadence, qjackctl
+Configuration software: cadence (GUI), qjackctl (GUI)
 
-Configuration files: jackd.conf (without pipewire)
+Configuration files: jackd.conf (only on systems _without_ pipewire) (edit in CLI)
 
-## MIDI Device Troubleshooting
+## 6.c MIDI Device Troubleshooting
 
 **midisnoop** (GUI): MIDI connection testing
 
